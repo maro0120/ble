@@ -29,7 +29,6 @@ export default {
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     { src: '~/plugins/full-calendar', mode: 'client' },
-    { src: '~/plugins/vue2-google-maps.js', mode: 'client' },
     { src: '~/plugins/vue-scrollto.js', mode: 'client' },
     // { src: '~/plugins/microcms' }
   ],
@@ -58,6 +57,10 @@ export default {
   modules: [
     '@nuxt/content',
     '@nuxtjs/axios',
+    ['@nuxtjs/google-gtag',{
+      id: 'G-6Z87LYB498',
+      debug: false
+    }]
     // '@nuxt/http',
   ],
   axios: {
@@ -68,8 +71,8 @@ export default {
   build: {
     //transpile: /@fullcalendar.*/ // transpile ESM modules within all fullcalendar packages
     extend(config, ctx) {},
-    vendor: ['vue2-google-maps'],
-    transpile: [/^vue2-google-maps($|\/)/]
+    // vendor: ['vue2-google-maps'],
+    // transpile: [/^vue2-google-maps($|\/)/]
   },
   privateRuntimeConfig: {
     apiKey: process.env.MICROCMS_API_KEY,
