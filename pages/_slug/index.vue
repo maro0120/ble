@@ -33,8 +33,11 @@
     <div class="max-w-screen-lg mx-auto px-2 py-5">
       <p style="white-space: pre-wrap;">{{ content }}</p>
     </div>
-    <div>
+    <div v-if="image">
       <img :src="image.url" alt="">
+    </div>
+    <div v-else>
+      <img src="../../assets/ble_logo.jpg" alt="">
     </div>
   </div>
   </div>

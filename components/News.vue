@@ -9,7 +9,12 @@
       <nuxt-link :to="`/${item.id}`">
         <div class="project-card flex flex-col justify-center items-center content-center text-center mb-8 bg-white">
             <div style="flex-basis:50%;">
+              <div v-if="item && item.image">
                 <img :src="item.image.url" class="h-screen/3 block m-auto object-contain" alt="">
+              </div>
+              <div v-else>
+                <img src="../assets/ble_logo.jpg" class="h-screen/3 block m-auto object-contain" alt="">
+              </div>
             </div>
             <div class="flex max-w-lg justify-center" style="flex-basis:50%;">
               <div class="txt md:px-5 lg:px-0">
